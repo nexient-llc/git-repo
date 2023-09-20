@@ -62,7 +62,7 @@ class EnvsubstCommand(unittest.TestCase):
 
     mock_2nd_level_manifest_file_content = r"""<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" dso_override_attrbiute_revision="${GITREV}">
+  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" dso_override_attribute_revision="${GITREV}">
     <linkfile src="linkfiles/Makefile" dest="components/Makefile" />
     <!-- <linkfile src="artifacts/terraform_modules/Makefile" dest="components/terraform_modules/Makefile" /> -->
   </project>
@@ -78,7 +78,7 @@ class EnvsubstCommand(unittest.TestCase):
 
     mock_2nd_level_manifest_negative_file_content = r"""<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" dso_override_attrbiute_revision="${GITREV_NOT_SET}">
+  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" dso_override_attribute_revision="${GITREV_NOT_SET}">
     <linkfile src="linkfiles/Makefile" dest="components/Makefile" />
     <!-- <linkfile src="artifacts/terraform_modules/Makefile" dest="components/terraform_modules/Makefile" /> -->
   </project>
@@ -94,7 +94,7 @@ class EnvsubstCommand(unittest.TestCase):
 
     mock_2nd_level_manifest_existing_attr_file_content = r"""<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" revision="1.2.3" dso_override_attrbiute_revision="${GITREV}">
+  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" revision="1.2.3" dso_override_attribute_revision="${GITREV}">
     <linkfile src="linkfiles/Makefile" dest="components/Makefile" />
     <!-- <linkfile src="artifacts/terraform_modules/Makefile" dest="components/terraform_modules/Makefile" /> -->
   </project>
@@ -110,7 +110,7 @@ class EnvsubstCommand(unittest.TestCase):
 
     mock_2nd_level_manifest_multi_attrs_file_content = r"""<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" revision="1.2.3" dso_override_attrbiute_revision="${GITREV}" dso_override_attrbiute_dest-branch="${TEST}">
+  <project name="caf-components-tf-module" path="components/module" remote="launch-dso-platform" revision="1.2.3" dso_override_attribute_revision="${GITREV}" dso_override_attribute_dest-branch="${TEST}">
     <linkfile src="linkfiles/Makefile" dest="components/Makefile" />
     <!-- <linkfile src="artifacts/terraform_modules/Makefile" dest="components/terraform_modules/Makefile" /> -->
   </project>

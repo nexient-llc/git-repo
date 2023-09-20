@@ -115,8 +115,8 @@ Finds all XML files in the manifests and replaces environment variables with val
 
     def inject_attrbutes(self, doc):
         """
-        When encounters XML element <any_element attrname='any value' dso_override_attrbiute_attrname="replacement">
-        or <any_element  dso_override_attrbiute_attrname="replacement">
+        When encounters XML element <any_element attrname='any value' dso_override_attribute_attrname="replacement">
+        or <any_element  dso_override_attribute_attrname="replacement">
         Replace it by <any_element attrname="replacement">
         """
         for elem in doc.getElementsByTagName('*'):
@@ -127,19 +127,19 @@ Finds all XML files in the manifests and replaces environment variables with val
 
     def attr_2_override_detected(self, elem) -> bool:
         for key, value in elem.attributes.items():
-            if key.startswith('dso_override_attrbiute_'):
+            if key.startswith('dso_override_attribute_'):
                 return True
         return False
 
     def get_next_attr_override(self, node) -> [str, str, str]:
         """
-        when node is <any_element attrname='any value' dso_override_attrbiute_attrname="replacement">
-        returns ['attrname','replacement','dso_override_attrbiute_attrname'] 
+        when node is <any_element attrname='any value' dso_override_attribute_attrname="replacement">
+        returns ['attrname','replacement','dso_override_attribute_attrname'] 
         otherwise returns an empty array
         """
         for key, value in node.attributes.items():
-            if key.startswith('dso_override_attrbiute_'):
-                attr_2_override = key[len('dso_override_attrbiute_'):]
+            if key.startswith('dso_override_attribute_'):
+                attr_2_override = key[len('dso_override_attribute_'):]
                 attr_2_override_value = value
                 attr_2_delete = key
                 return [attr_2_override, attr_2_override_value, attr_2_delete]
